@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") //Colocou o bando dentro de uma variavel de ambiente para não ficar exposto
+}
+
+//Criacao dos Schemas
+//Uma convenção é criar o nome da model no singular e o nome da tabela no plural
+//Comando para criar uma migration: yarn prisma migrate dev
+
+//Models:
+model User {
+  id String @id @default(uuid()) // @id = diz que é o id. Por padrao vai ser auto incrementado (uuid) 
+  name String
+  email String
+  password String
+  created_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco
+  updated_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco
+
+  //Mapea dizando como criar a tabela no banco de dados
+  @@map("users") //Nome da tabela no banco de dados
+}
+
+model Category{
+  id String @id @default(uuid()) // @id = diz que é o id. Por padrao vai ser auto incrementado (uuid) 
+  name String
+  created_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco
+  updated_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco  
+
+  //Mapea dizando como criar a tabela no banco de dados
+  @@map("categories") //Nome da tabela no banco de dados
+  product Product[] //Uma categoria pode estár cadastrado em varios produtos
+}
+
+model Product{
+  id String @id @default(uuid()) // @id = diz que é o id. Por padrao vai ser auto incrementado (uuid) 
+  name String  
+  price Float //preco do produto
+  description String
+  banner String //Nome da foto para exibir  
+  created_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco
+  updated_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco  
+
+  //Todo produto vai ter uma categoria
+  //field é o campo que tera a relacao e a references é o campo que sera relacionado na outra tabela
+  category Category @relation(fields: [category_id], references: [id]) //Relaciona o produto com a categoria
+
+  //Mapea dizando como criar a tabela no banco de dados
+  @@map("products") //Nome da tabela no banco de dados
+  category_id String //Campo que relaciona o produto com a Category
+  items Item[] //Um produto pode estar dentro de varios itens
+}
+
+model Order{
+  id String @id @default(uuid()) // @id = diz que é o id. Por padrao vai ser auto incrementado (uuid)
+  table Int //Numero da mesa
+  status Boolean @default(false) //Status do pedido, se está aberto ou fechado
+  draft Boolean @default(true) //Status do pedido, se está em rascunho ou não
+  name String? //Nome do cliente, ? = opcional
+  created_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco
+  updated_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco
+
+  //Mapea dizando como criar a tabela no banco de dados
+  @@map("orders") //Nome da tabela no banco de dados
+  items Item[] //Um pedido pode ter varios itens
+}
+
+model Item{
+  id String @id @default(uuid()) // @id = diz que é o id. Por padrao vai ser auto incrementado (uuid)
+  amount Int //Quantidade de produtos  
+  created_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco
+  updated_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco
+
+  //field é o campo que tera a relacao e a references é o campo que sera relacionado na outra tabela
+  order Order @relation(fields: [order_id], references: [id]) //Relaciona o item com o pedido
+  product Product @relation(fields: [product_id], references: [id]) //Relaciona o item com o produto
+
+  //Mapea dizando como criar a tabela no banco de dados
+  @@map("items") //Nome da tabela no banco de dados  
+  order_id String //Campo que relaciona o item com o pedido
+  product_id String //Campo que relaciona o item com o produto
+}
+
