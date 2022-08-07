@@ -2,7 +2,10 @@ import {Response, Request, NextFunction} from 'express'
 //verify = usado para verificar se o token é valido
 import { verify } from 'jsonwebtoken'
 
-/** Arquivo para ter vario meddleware onde sempre é iniciado antes de qualquer rota */
+/** Arquivo contendo middleware onde sempre é iniciado antes de qualquer rota 
+ *  Ele fica entre a requisição da rota.
+ *  Ele verifica se o token é valido e se o usuário está autenticado.
+*/
 
 interface Payload{
     //Esse sub é o id do usuario que nois colocamos no token
