@@ -1,4 +1,6 @@
 import prismaClient from '../../prisma'
+//hash é para criptografar algo
+import {hash} from 'bcryptjs'
 
 //Cria uma interface do typescript
 interface UserRequest{
@@ -36,6 +38,11 @@ class CreateUserService{
             throw new Error("User already exists")
         }
         
+        //Cria um hash para o password
+        // É preciso passar o password para criptografar e o salto que é o numero da criptografia
+        //Um padrão é usar o 8
+        const passwordHash = await hash(password, 8)
+
         //Cadastra o usuário no banco de dados
         /** prismaClient é o acesso no banco de dados
          * user é o nome da model criada no prisma mas com a primeira letra minuscula
@@ -47,7 +54,7 @@ class CreateUserService{
                 //Informa os campos e os valores que vai cadastrar
                 name: name,
                 email: email,
-                password: password
+                password: passwordHash //salva a senha cryptografada
             },
             //Informa os campos que vai retornar
             select:{
