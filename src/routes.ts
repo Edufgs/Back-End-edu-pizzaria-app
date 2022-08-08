@@ -4,6 +4,7 @@ import {CreateUserController} from './controllers/user/CreateUserController';
 import {AuthUserController} from './controllers/user/AuthUserController';
 import {DetailUserController} from './controllers/user/DetailUserController';
 import {CreateCategoryController} from './controllers/category/CreateCategoryController';
+import {ListCategoryController} from './controllers/category/ListCategoryController';
 
 import {isAuthenticated} from './middlewares/isAuthenticated';
 
@@ -38,6 +39,7 @@ router.get('/userinfo', isAuthenticated, new DetailUserController().handle);
 //post pois cadastra algo na api
 //isAuthenticated é um middleware que verifica se o usuário está autenticado. Colocando nesse local então sempre vai executar antes de entrar na rota
 router.post('/category', isAuthenticated, new CreateCategoryController().handle);
+router.get('/category', isAuthenticated,  new ListCategoryController().handle);
 
 
 //Exporta o router para ser usado em outros arquivos
