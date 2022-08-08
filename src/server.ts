@@ -3,6 +3,9 @@ import express, {Request, Response, NextFunction} from 'express'
 //É orientacao do express-async-errors para importar sempre no segundo import
 import 'express-async-errors';
 import cors from 'cors';
+//Dependencia para pegar os caminhos dos arquivos
+//Dependencia vem com o Nodejs (Não preciso instalar)
+import path from 'path';
 
 import {router} from './routes'
 
@@ -12,6 +15,14 @@ const app = express();
 app.use(express.json());
 //Abilita o cors para que qualquer url ou ip faz requisição na nossa api
 app.use(cors());
+//Define uma rota para acessar arquivos estáticos (css, js, imagens, etc)
+//É como se fosse um middleware
+//O primeiro parametro é a rota que vai ser acessada ('/files')
+//O segundo parametro é a pasta que vai ser acessada (path.resolve(__dirname, '..', 'uploads'))
+//__dirname é o caminho atual desse arquivo
+//'..' é para voltar um diretorio (voltar pasta)
+//'tmp' é o nome da pasta
+app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 
 //Diz que as rotas vão estar no import router
 //Diz que ele vai ser o roteamento

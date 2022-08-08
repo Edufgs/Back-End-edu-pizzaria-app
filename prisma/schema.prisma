@@ -41,7 +41,7 @@ model Category{
 model Product{
   id String @id @default(uuid()) // @id = diz que é o id. Por padrao vai ser auto incrementado (uuid) 
   name String  
-  price Float //preco do produto
+  price String //preco do produto
   description String
   banner String //Nome da foto para exibir  
   created_at DateTime? @default(now()) //?= opcional, @default(now())= coloca a data de criacao automaticamente do banco
