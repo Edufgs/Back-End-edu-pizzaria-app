@@ -1,5 +1,5 @@
-import {Request, response, Response} from 'express'
-import {CreateUserService} from '../../services/user/CreateUserService'
+import { Request, response, Response } from 'express'
+import { CreateUserService } from '../../services/user/CreateUserService'
 
 //Classe que representa o controller
 class CreateUserController{

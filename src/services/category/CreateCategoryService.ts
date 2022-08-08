@@ -36,4 +36,4 @@ class CreateCategoryService{
     }
 }
 
-export {CreateCategoryService}
+export { CreateCategoryService }

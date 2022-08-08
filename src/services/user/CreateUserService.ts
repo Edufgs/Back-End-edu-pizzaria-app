@@ -1,6 +1,6 @@
 import prismaClient from '../../prisma'
 //hash é para criptografar algo
-import {hash} from 'bcryptjs'
+import { hash } from 'bcryptjs'
 
 //Cria uma interface do typescript
 interface UserRequest{

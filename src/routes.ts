@@ -1,18 +1,24 @@
-import {Router} from 'express';
+import { Router } from 'express';
 import multer from 'multer';
 
-import {CreateUserController} from './controllers/user/CreateUserController';
-import {AuthUserController} from './controllers/user/AuthUserController';
-import {DetailUserController} from './controllers/user/DetailUserController';
-import {CreateCategoryController} from './controllers/category/CreateCategoryController';
-import {ListCategoryController} from './controllers/category/ListCategoryController';
-import {CreateProductController} from './controllers/product/CreateProductController';
+import { CreateUserController } from './controllers/user/CreateUserController';
+import { AuthUserController } from './controllers/user/AuthUserController';
+import { DetailUserController } from './controllers/user/DetailUserController';
+import { CreateCategoryController } from './controllers/category/CreateCategoryController';
+import { ListCategoryController } from './controllers/category/ListCategoryController';
+import { CreateProductController } from './controllers/product/CreateProductController';
+import { ListByCategoryController } from './controllers/product/ListByCategoryController';
 
-import {isAuthenticated} from './middlewares/isAuthenticated';
+import { isAuthenticated } from './middlewares/isAuthenticated';
 
 //Importa o arquivo de configuraçãoes do multer
 import uploadconfig from './config/multer'
 
+/** Como pasar parametros via requisição:
+ *  Query params = ?teste=NodeJS (São parâmetros que vem depois do endereco)
+ *  Route params = /users/1 (São parâmetros que vem antes do endereco)
+ *  Request body = corpo do request {name: 'Nodejs', tipo: 'Backend'} (São parâmetros que vem no corpo da requisicao)
+ */
 
 //Constante de rotas
 const router = Router();
@@ -60,6 +66,7 @@ router.get('/category', isAuthenticated,  new ListCategoryController().handle);
 //a configuração dele é "single" onde envia apenas um arquivo (Tem como mudar essa configuração)
 //file é o nome do campo que vai ser envidado a foto (Em vez de ser um request.body, vai ser um request.file)
 router.post('/product', isAuthenticated, upload.single('file'), new CreateProductController().handle);
+router.get('/category/product', isAuthenticated, new ListByCategoryController().handle);
 
 //Exporta o router para ser usado em outros arquivos
 export{ router };

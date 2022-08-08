@@ -7,7 +7,7 @@ import cors from 'cors';
 //Dependencia vem com o Nodejs (Não preciso instalar)
 import path from 'path';
 
-import {router} from './routes'
+import { router } from './routes'
 
 //Para iniciar o projeto
 const app = express();

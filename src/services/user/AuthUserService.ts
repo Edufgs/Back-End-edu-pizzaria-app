@@ -1,8 +1,8 @@
 import prismaClient from "../../prisma";
 //compare = com ele é possivel comparar a senha criptografada com a senha do usuário
-import {compare} from "bcryptjs"
+import { compare } from "bcryptjs"
 //sign = gera um token
-import {sign} from "jsonwebtoken"
+import { sign } from "jsonwebtoken"
 
 //interface é uma interface do typescript que define os campos que vai receber
 interface AuthRequest{
@@ -72,4 +72,4 @@ class AuthUserService {
 }
 
 //Exporta o serviço para ser usado em outros lugares
-export {AuthUserService};
+export { AuthUserService };
