@@ -8,11 +8,13 @@ import { CreateCategoryController } from './controllers/category/CreateCategoryC
 import { ListCategoryController } from './controllers/category/ListCategoryController';
 import { CreateProductController } from './controllers/product/CreateProductController';
 import { ListByCategoryController } from './controllers/product/ListByCategoryController';
+import { CreateOrderController } from './controllers/order/CreateOrderController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
 //Importa o arquivo de configuraçãoes do multer
 import uploadconfig from './config/multer'
+import { RemoveOrderController } from './controllers/order/RemoveOrderController';
 
 /** Como pasar parametros via requisição:
  *  Query params = ?teste=NodeJS (São parâmetros que vem depois do endereco)
@@ -37,8 +39,7 @@ const upload = multer(uploadconfig.upload("./tmp"));
     return res.json({nome: 'Edu Pizza'})
 })*/
 
-//---- ROTAS USER ----
-
+//---- ROTAS USER ---
 //Rota para criar um usuario
 //o endereço da rota é /users e cria um controller entrando no metodo handle
 //post pois manda dados para api
@@ -66,7 +67,16 @@ router.get('/category', isAuthenticated,  new ListCategoryController().handle);
 //a configuração dele é "single" onde envia apenas um arquivo (Tem como mudar essa configuração)
 //file é o nome do campo que vai ser envidado a foto (Em vez de ser um request.body, vai ser um request.file)
 router.post('/product', isAuthenticated, upload.single('file'), new CreateProductController().handle);
+//Lista produto por categoria
+//Mesmo pasando o id pelo query params, não precisa especificar na rota
 router.get('/category/product', isAuthenticated, new ListByCategoryController().handle);
+
+//---- ROTAS ORDER ----
+//Rota para criar uma order
+router.post('/order', isAuthenticated, new CreateOrderController().handle);
+//Rota para remover uma order
+//Mesmo pasando o id pelo query params, não precisa especificar na rota
+router.delete('/order', isAuthenticated, new RemoveOrderController().handle);
 
 //Exporta o router para ser usado em outros arquivos
 export{ router };
