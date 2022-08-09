@@ -12,6 +12,9 @@ import { CreateOrderController } from './controllers/order/CreateOrderController
 import { AddItemController } from './controllers/order/AddItemController';
 import { RemoveItemController } from './controllers/order/RemoveitemController';
 import { SendOrderController } from './controllers/order/SendOrdemController';
+import { ListOrderController } from './controllers/order/ListOrderController';
+import { DetailOrderController } from './controllers/order/DetailOrderController';
+import { FinishOrderController } from './controllers/order/FinishOrderController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
@@ -84,9 +87,15 @@ router.delete('/order', isAuthenticated, new RemoveOrderController().handle);
 router.post('/order/add', isAuthenticated, new AddItemController().handle);
 //Remove itens da order
 router.delete('/order/remove', isAuthenticated, new RemoveItemController().handle);
-//Manda a ordem (Tira a ordem do rascunho)
+//Manda a ordem para a cozinha (Tira a ordem do rascunho)
 //put para atualizar
 router.put('/order/send', isAuthenticated, new SendOrderController().handle);
+//Lista as ordens que foram enviadas (nao estão em modo rascunho) e com "status" false
+router.get('/orders', isAuthenticated, new ListOrderController().handle);
+//Detalha uma ordem
+router.get('/order/detail', isAuthenticated, new DetailOrderController().handle);
+//Finaliza uma ordem (Muda o status para true)
+router.put('/order/finish', isAuthenticated, new FinishOrderController().handle);
 
 //Exporta o router para ser usado em outros arquivos
 export{ router };
