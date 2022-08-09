@@ -3,3 +3,5 @@
 API feita em NodeJs, TypeScript para gerenciamento de pedidos em uma pizzaria.
 
 Descrição está sendo criado.....
+
+Branch main é a versão funcional da API.
