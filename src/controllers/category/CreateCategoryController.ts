@@ -9,7 +9,7 @@ class CreateCategoryController{
         // Inicializou o serviço
         const createCategoryService = new CreateCategoryService();
 
-        const category = await createCategoryService.execute(name);
+        const category = await createCategoryService.execute({name});
         
         return res.json(category);
     }

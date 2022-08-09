@@ -1,14 +1,13 @@
 import prismaClient from '../../prisma';
 
 //Cria uma interface do typescript
-/*interface CategoryRequest {
+interface CategoryRequest {
     //Informa a tipagem dos parametros que vai receber
     name: string; //Nome da categoria
-}*/
+}
 
 class CreateCategoryService{
-    //async execute({name}: CategoryRequest){
-    async execute(name: string){        
+    async execute({name}: CategoryRequest){          
         //Se o name for vazio
         if(name === ""){
             //Retorna um erro

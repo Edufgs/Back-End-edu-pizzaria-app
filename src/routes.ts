@@ -9,6 +9,9 @@ import { ListCategoryController } from './controllers/category/ListCategoryContr
 import { CreateProductController } from './controllers/product/CreateProductController';
 import { ListByCategoryController } from './controllers/product/ListByCategoryController';
 import { CreateOrderController } from './controllers/order/CreateOrderController';
+import { AddItemController } from './controllers/order/AddItemController';
+import { RemoveItemController } from './controllers/order/RemoveitemController';
+import { SendOrderController } from './controllers/order/SendOrdemController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
@@ -77,6 +80,13 @@ router.post('/order', isAuthenticated, new CreateOrderController().handle);
 //Rota para remover uma order
 //Mesmo pasando o id pelo query params, não precisa especificar na rota
 router.delete('/order', isAuthenticated, new RemoveOrderController().handle);
+//Adiciona um item na order
+router.post('/order/add', isAuthenticated, new AddItemController().handle);
+//Remove itens da order
+router.delete('/order/remove', isAuthenticated, new RemoveItemController().handle);
+//Manda a ordem (Tira a ordem do rascunho)
+//put para atualizar
+router.put('/order/send', isAuthenticated, new SendOrderController().handle);
 
 //Exporta o router para ser usado em outros arquivos
 export{ router };
