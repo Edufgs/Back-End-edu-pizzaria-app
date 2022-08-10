@@ -29,7 +29,7 @@ O projeto tem como objetivo fazer o gerenciamento de pedidos em um restaurante, 
 * <b>ts-node-dev:</b> É uma ferramenta que compila seus projetos com Typescript e reinicia o projeto quando o arquivo é modificado.
 <br>Site: https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
 
-* <b>cors:</b> Usado para abilitar qualquer ip ou url a fazer requisição
+* <b>cors:</b> Usado para habilitar qualquer ip ou url a fazer requisição
 <br>Site: https://expressjs.com/en/resources/middleware/cors.html
 
 * <b>Prisma IO:</b> Mapeamento objeto-relacional (ORM).
@@ -41,8 +41,8 @@ O projeto tem como objetivo fazer o gerenciamento de pedidos em um restaurante, 
 * <b>jsonwebtoken:</b> É um pacote que implementa o protocolo JSON Web Token.
 <br>Site: https://jwt.io/
 
-* <b>Dotenv:</b> É um módulo de dependência que carrega variáveis de ambiente de um arquivo .env. Usado para acessar as variaveis de ambiente de forma segura.
-<br>Site: https://jwt.io/
+* <b>Dotenv:</b> É um módulo de dependência que carrega variáveis de ambiente de um arquivo .env. Usado para acessar as variáveis de ambiente de forma segura.
+<br>Site: https://www.npmjs.com/package/dotenv
 
 * <b>Multer:</b> É usado principalmente para fazer upload de arquivos.
 <br>Site: https://www.npmjs.com/package/multer
@@ -50,7 +50,7 @@ O projeto tem como objetivo fazer o gerenciamento de pedidos em um restaurante, 
 # Editor de código-fonte:
 * <b>Visual Studio Code:</b> O Visual Studio Code é um editor de código-fonte desenvolvido pela Microsoft para Windows, Linux e macOS. Ele inclui suporte para depuração, controle de versionamento Git incorporado, realce de sintaxe, complementação inteligente de código, snippets e refatoração de código.
 
-# Intalações:
+# Instalações:
 
 <b>Node JS:</b> Baixe o Node JS no site oficial https://nodejs.org/en/download/ e instale.
 
