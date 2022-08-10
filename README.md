@@ -5,7 +5,7 @@ Desenvolvimento back-end usando NodeJs e TypeScript para a criação de uma API 
 O projeto tem como objetivo fazer o gerenciamento de pedidos em um restaurante, podendo cadastrar mesa, registrar, listar, detalhar e concluir os pedidos
 
 # Ferramentas utilizadas:
-* <b>NodeJs V8.11.0:</b> Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web.
+* <b>NodeJs V16.16.0:</b> Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web.
   <br>Site da Documentação: https://nodejs.org/en/
   
 * <b>PostgreSQL:</b> O PostgreSQL é um poderoso sistema de banco de dados relacional de objeto de código.
