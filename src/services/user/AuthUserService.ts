@@ -57,7 +57,7 @@ class AuthUserService {
             //Terceira coisa é o id do usuario e o tempo de expiração do token
             {
                 subject: user.id, //Dentro do campo "sub" está sendo colocado o usuario
-                expiresIn: '7d' //Expira em 7 dias, depois que passar esses dias então é preciso gerar um novo token (Logar novamente)
+                expiresIn: '30d' //Expira em 30 dias, depois que passar esses dias então é preciso gerar um novo token (Logar novamente)
             }
         )
 
