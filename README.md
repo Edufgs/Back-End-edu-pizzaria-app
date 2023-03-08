@@ -4,132 +4,160 @@ Desenvolvimento back-end usando NodeJs e TypeScript para a criação de uma API 
 
 O projeto tem como objetivo fazer o gerenciamento de pedidos em um restaurante, podendo cadastrar mesa, registrar, listar, detalhar e concluir os pedidos
 
-# Ferramentas utilizadas:
-* <b>NodeJs V8.11.0:</b> Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web.
-  <br>Site da Documentação: https://nodejs.org/en/
+## Ferramentas utilizadas
+
+* **NodeJs V8.11.0:** Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web.
   
-* <b>PostgreSQL:</b> O PostgreSQL é um poderoso sistema de banco de dados relacional de objeto de código.
-  <br>Site Oficial: https://www.postgresql.org/
+  Site da Documentação: <https://nodejs.org/en/>
+  
+* **PostgreSQL:** O PostgreSQL é um poderoso sistema de banco de dados relacional de objeto de código.
+  
+  Site Oficial: <https://www.postgresql.org/>
 
-* <b>TypeScript:</b> TypeScript é uma linguagem de programação fortemente tipada que se baseia em JavaScript, oferecendo melhores ferramentas em qualquer escala.
-  <br>Site Oficial: https://www.typescriptlang.org/
+* **TypeScript:** TypeScript é uma linguagem de programação fortemente tipada que se baseia em JavaScript, oferecendo melhores ferramentas em qualquer escala.
+  
+  Site Oficial: <https://www.typescriptlang.org/>
 
-* <b>Express:</b> O Express é um framework e possui diversas características que facilitam o desenvolvimento de nossas aplicações. Dentre suas principais características, podemos citar:
+* **Express:** O Express é um framework e possui diversas características que facilitam o desenvolvimento de nossas aplicações. Dentre suas principais características, podemos citar:
 
   * Possui um sistema de rotas completo;
   * Possibilita o tratamento de exceções dentro da aplicação;
   * Permite a integração de vários sistemas de templates que facilitam a criação de páginas web para suas aplicações;
   * Gerencia diferentes requisições HTTP com seus mais diversos verbos;
   * Feito para a criação rápida de aplicações utilizando um conjunto pequeno de arquivos e pastas;
- <br>Site Oficial: http://expressjs.com/pt-br/
- 
- * <b>express-async-errors:</b> Ele é usado para gerar erros modificados e personalizados.
-<br>Site: https://www.npmjs.com/package/express-async-errors
+  
+    Site Oficial: <http://expressjs.com/pt-br/>
 
-* <b>ts-node-dev:</b> É uma ferramenta que compila seus projetos com Typescript e reinicia o projeto quando o arquivo é modificado.
-<br>Site: https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+* **express-async-errors:** Ele é usado para gerar erros modificados e personalizados.
 
-* <b>cors:</b> Usado para habilitar qualquer ip ou url a fazer requisição
-<br>Site: https://expressjs.com/en/resources/middleware/cors.html
+  Site: <https://www.npmjs.com/package/express-async-errors>
 
-* <b>Prisma IO:</b> Mapeamento objeto-relacional (ORM).
-<br>Site: https://www.prisma.io/
+* **ts-node-dev:** É uma ferramenta que compila seus projetos com Typescript e reinicia o projeto quando o arquivo é modificado.
+  
+  Site: <https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt>
 
-* <b>bcryptjs:</b> Usado para criptografia.
-<br>Site: https://www.npmjs.com/package/bcryptjs
+* **cors:** Usado para habilitar qualquer ip ou url a fazer requisição
 
-* <b>jsonwebtoken:</b> É um pacote que implementa o protocolo JSON Web Token.
-<br>Site: https://jwt.io/
+  Site: <https://expressjs.com/en/resources/middleware/cors.html>
 
-* <b>Dotenv:</b> É um módulo de dependência que carrega variáveis de ambiente de um arquivo .env. Usado para acessar as variáveis de ambiente de forma segura.
-<br>Site: https://www.npmjs.com/package/dotenv
+* **Prisma IO:** Mapeamento objeto-relacional (ORM).
 
-* <b>Multer:</b> É usado principalmente para fazer upload de arquivos.
-<br>Site: https://www.npmjs.com/package/multer
+  Site: <https://www.prisma.io/>
 
-# Editor de código-fonte:
-* <b>Visual Studio Code:</b> O Visual Studio Code é um editor de código-fonte desenvolvido pela Microsoft para Windows, Linux e macOS. Ele inclui suporte para depuração, controle de versionamento Git incorporado, realce de sintaxe, complementação inteligente de código, snippets e refatoração de código.
+* **bcryptjs:** Usado para criptografia.
+  
+  Site: <https://www.npmjs.com/package/bcryptjs>
 
-# Instalações:
+* **jsonwebtoken:** É um pacote que implementa o protocolo JSON Web Token.
+  
+  Site: <https://jwt.io/>
 
-<b>Node JS:</b> Baixe o Node JS no site oficial https://nodejs.org/en/download/ e instale.
+* **Dotenv:** É um módulo de dependência que carrega variáveis de ambiente de um arquivo .env. Usado para acessar as variáveis de ambiente de forma segura.
+  
+  Site: <https://www.npmjs.com/package/dotenv>
 
-O <b>npm</b> é um gerenciador de pacotes do  Node JS. Vem junto do  Node JS quando instalado. Ele é usado para baixar as dependências do projeto.
+* **Multer:** É usado principalmente para fazer upload de arquivos.
 
-<b>yarn</b> é um gerenciador de pacotes do  Node JS melhor que o npm tanto em performance quanto em recursos. É preciso instalar pelo cmd depois de instalar o Node JS usando o comando: 
-```
+  Site: <https://www.npmjs.com/package/multer>
+
+## Editor de código-fonte
+
+* **Visual Studio Code:** O Visual Studio Code é um editor de código-fonte desenvolvido pela Microsoft para Windows, Linux e macOS. Ele inclui suporte para depuração, controle de versionamento Git incorporado, realce de sintaxe, complementação inteligente de código, snippets e refatoração de código.
+
+## Instalações
+
+**Node JS:** Baixe o Node JS no site oficial <https://nodejs.org/en/download/> e instale.
+
+O **npm** é um gerenciador de pacotes do  Node JS. Vem junto do  Node JS quando instalado. Ele é usado para baixar as dependências do projeto.
+
+**yarn** é um gerenciador de pacotes do  Node JS melhor que o npm tanto em performance quanto em recursos. É preciso instalar pelo cmd depois de instalar o Node JS usando o comando:
+
+```code
 npm install -g yarn
 ```
 
-<b>TypeScript</b> Instalação usando o comando (-D pois ele é só instalado no ambiente de desenvolvimento): 
-```
+**TypeScript** Instalação usando o comando (-D pois ele é só instalado no ambiente de desenvolvimento):
+
+```code
 yarn add typescript -D
 ```
 
-<b>Express</b> Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento): 
-```
+**Express** Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento):
+
+```code
 yarn add express
 yarn add @types/express -D
 ```
 
-<b>ts-node-dev</b> Instalação usando o comando (-D pois ele é só instalado no ambiente de desenvolvimento): 
-```
+**ts-node-dev** Instalação usando o comando (-D pois ele é só instalado no ambiente de desenvolvimento):
+
+```code
 yarn add ts-node-dev -D
 ```
 
-<b>express-async-errors</b> Instalação usando o comando (-D pois ele é só instalado no ambiente de desenvolvimento): 
-```
+**express-async-errors** Instalação usando o comando (-D pois ele é só instalado no ambiente de desenvolvimento):
+
+```code
 yarn add express-async-errors
 ```
 
-<b>cors</b> Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento): 
-```
+**cors** Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento):
+
+```code
 yarn add cors
 yarn add @types/cors -D
 ```
 
-<b>Prisma IO</b> Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento): 
-```
+**Prisma IO** Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento):
+
+```code
 yarn add prisma
 yarn add @prisma/client
 ```
 
-<b>bcryptjs</b> Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento): 
-```
+**bcryptjs** Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento):
+
+```code
 yarn add bcryptjs
 yarn add @types/bcryptjs -D
 ```
 
-<b>Prisma IO</b> Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento): 
-```
+**Prisma IO** Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento):
+
+```code
 yarn add jsonwebtoken
 yarn add @types/jsonwebtoken -D
 ```
 
-<b>dotenv</b> Instalação usando o comando: 
-```
+**dotenv** Instalação usando o comando:
+
+```code
 yarn add dotenv
 ```
 
-<b>multer</b> Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento): 
-```
+**multer** Instalação usando os comandos (Primeiro comando para instalar normalmente o express e o segundo para funcionar no typescript. O -D pois ele é só instalado no ambiente de desenvolvimento):
+
+```code
 yarn add multer
 yarn add @types/multer -D 
 ```
 
-# Criação do projeto:
+## Criação do projeto
 
 Criação da estrutura padrão do projeto onde é adiciona um arquivo chamado "package.json":
-```
+
+```code
 yarn init -y
 ```
 
 Instala o typescript no ambiente de desenvolvimento. No projeto aparece a pasta "node_modules" e o arquivo "yarn.lock".
-```
+
+```code
 yarn add typescript -D
 ```
 
 Inicializa o typescript e cria o arquivo "tsconfig.json"
-```
+
+```code
 yarn tsc --init
 ```
