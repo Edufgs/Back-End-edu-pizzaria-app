@@ -6,7 +6,7 @@ O projeto tem como objetivo fazer o gerenciamento de pedidos em um restaurante, 
 
 ## Ferramentas utilizadas
 
-* **NodeJs V8.11.0:** Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web.
+* **NodeJs V18.15.0:** Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web.
   
   Site da Documentação: <https://nodejs.org/en/>
   
